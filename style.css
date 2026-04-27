@@ -399,6 +399,7 @@ nav a:hover { opacity: 1; }
 
 .nft-gif img {
   width: 100%;
+  max-width: 300px;
   height: auto;
   border: 3px solid var(--black);
   display: block;
@@ -419,17 +420,20 @@ nav a:hover { opacity: 1; }
 }
 
 .nft-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
+  justify-content: flex-start;
 }
 
 .nft-grid img {
-  width: 100%;
-  height: auto;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
   border: 3px solid var(--black);
   display: block;
   image-rendering: pixelated;
+  background: var(--off-white);
   transition: transform 0.15s, box-shadow 0.15s;
 }
 
@@ -492,6 +496,28 @@ nav a:hover { opacity: 1; }
   border: 2px solid var(--blue);
   padding: 0.2rem 0.6rem;
   display: inline-block;
+}
+
+/* PHOTO GRID */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.photo-grid img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border: 3px solid var(--black);
+  display: block;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.photo-grid img:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 6px 6px 0px var(--black);
 }
 
 /* ABOUT */
